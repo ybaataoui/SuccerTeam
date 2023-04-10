@@ -14,7 +14,7 @@ const SideBar = () => {
                     <Link  to="/" style={{ textDecoration: 'inherit'}}><FaHome size="2rem"/>&nbsp; &nbsp;Home</Link>
                 </li>
                 <li className="nav-item">
-                    <FaSearch size="2rem"/>&nbsp; &nbsp;Search
+                    <a href="" style={{ textDecoration: 'inherit'}}><FaSearch size="2rem"/>&nbsp; &nbsp;Search</a>
                 </li>
                 <li className="nav-item">
                     <Link  to="/CreatePost" style={{ textDecoration: 'inherit'}}><FaUserPlus size="2rem"/>&nbsp; &nbsp;Create a Team</Link>

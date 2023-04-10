@@ -24,12 +24,14 @@ const ReadPosts = () => {
     return (
         <div className="">
             <SideBar />
-            <div className="container">
+            <h1 className="title">Your Teamate Gallery!</h1>
+            <div className="playersContainer">
+                
                 {
                     posts && posts.length > 0 ?
                     posts.map((post) =>
                         <Link to={`/DetailsPlayer/${post.id}/${post.name}/${post.position}/${post.number}`} style={{ color: 'inherit', textDecoration: 'inherit'}}>
-                            <div key={post.id}>
+                            <div key={post.id} className="playerCard">
                                 <Card id={post.id} name={post.name} position={post.position} number={post.number} color={post.color} key={post.id}/>
                             </div>
                         </Link>   
@@ -37,6 +39,7 @@ const ReadPosts = () => {
                 }
             </div>
         </div>
+
     )
 }
 

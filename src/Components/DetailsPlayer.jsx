@@ -14,14 +14,14 @@ const DetailsPlayer = () => {
         .delete()
         .eq('id', id);
 
-        window.location = "http://localhost:5173/";
+        window.location = "/";
     }
 
     return(
         <div className="container">
             <SideBar />
             <div className="">
-                <h1 className="name">Player Name: {name}</h1>
+                <h1 className="name">Player's Name: {name}</h1>
                 <h3> Position: {position}</h3>
                 <h3> Number: {number}</h3>
                 <br />

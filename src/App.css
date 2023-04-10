@@ -7,17 +7,17 @@
 
 .sideNav {
   height: 100%;
-  width: 15%;
+  width: 13%;
   position: fixed;
   top: 0;
   left: 0;
   bottom: 0;
-  background-color: #f5d7d7;
+  background-color: #9cf3ca;
   padding-top: 15px;
   padding-bottom: 15px;
   padding-left: 10px;
   padding-right: 10px;
-  overflow-y: scroll;
+  
   display: flex;
   flex-direction: column;
   align-items: left;
@@ -37,6 +37,7 @@
 
 li {
   list-style: none;
+  margin-bottom: 15px;
 
 }
 
@@ -45,7 +46,7 @@ li {
 }
 
 .card {
-  width: 250px;
+  width: 350px;
   height: 350px;
   margin-bottom: 20px;
 }
@@ -60,3 +61,22 @@ li {
   width: 350px;
   height: 350px;
 }
+
+.player {
+  width: 200px;
+  height: 200px;
+}
+.title {
+  margin-bottom: 60px;
+}
+
+.playersContainer{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.playerCard {
+  margin-left: 30px;
+}
+

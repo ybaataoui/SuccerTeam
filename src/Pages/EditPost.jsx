@@ -44,7 +44,7 @@ const EditPost = () => {
         .delete()
         .eq('id', id);
 
-        window.location = "http://localhost:5173/";
+        window.location = "/";
     }
     return (
         <div>

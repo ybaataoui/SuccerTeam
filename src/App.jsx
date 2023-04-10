@@ -50,9 +50,9 @@ function App() {
     <div className="App">
       <SideBar />
       <div className='body'>
-          <h1>Welcome to the Teamates Creator!</h1>
+          <h3>Welcome to the Succer Team Creator!</h3>
           <br />
-          <h3>Here is where you can create your own succer team before start the game against your friend!</h3>
+          <h5>Whith this creator you can create your own succer team before start the game against your friend!</h5>
           <img src={Team} alt="" />
       </div> 
     </div>
