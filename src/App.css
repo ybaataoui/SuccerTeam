@@ -1,0 +1,62 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.sideNav {
+  height: 100%;
+  width: 15%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background-color: #f5d7d7;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+}
+
+.mini-container {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  text-align: center;
+  width: 270px;
+  margin: 5px;
+  padding: 15px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+li {
+  list-style: none;
+
+}
+
+.btn-margin {
+  margin-left: 20px;
+}
+
+.card {
+  width: 250px;
+  height: 350px;
+  margin-bottom: 20px;
+}
+
+.editButton, .deleteButton {
+  margin-bottom: 10px;
+  margin-left: 20px;
+  
+}
+
+.ball {
+  width: 350px;
+  height: 350px;
+}
