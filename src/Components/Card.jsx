@@ -10,14 +10,12 @@ const Card = (props) => {
                 <img src={Player} alt="" className="player"/>
                 <h3 className="name">Name of Player: {props.name}</h3>
                 <p>Position of Player: {props.position}</p>
-                <p>Number of Player: {props.number}</p>
+                <p>Player's Age: {props.number}</p>
                 {/* <p className="color">{props.color}</p> */}
                 <Link to={`/editPost/${props.id}/${props.name}/${props.position}/${props.number}/${props.color}`}>
                     <button className="btn btn-primary editButton">Edit Player</button>
                 </Link>
             </div>
-            
-            
             <Outlet />
         </div>
     )

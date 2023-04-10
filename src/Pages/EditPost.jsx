@@ -74,7 +74,7 @@ const EditPost = () => {
                     </div>
                     <div className='col'>
                         <div className="mini-container">
-                            <h3>Number</h3>
+                            <h3>Age</h3>
                             <div className="form-text" id="">
                                 <input type="text" className='form-control' placeholder="Enter teamate's number " id='number' defaultValue={number}/>
                             </div>

@@ -25,26 +25,6 @@ function App() {
       }
       fetchPost().catch(console.error)
   },[])
-  
-  //Sets up routes
-  // let element = useRoutes([
-  //   {
-  //     path: "/",
-  //     element: <ReadPosts/>
-  //   },
-  //   {
-  //     path: "/new",
-  //     element: <CreatePost />
-  //   },
-  //   {
-  //     path: "/readPosts",
-  //     element: <ReadPosts />
-  //   },
-  //   {
-  //     path: "/edit/:id",
-  //     element: <EditPost data={posts} />
-  //   }
-  // ]);
 
   return (
     <div className="App">

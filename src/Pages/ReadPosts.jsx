@@ -21,10 +21,25 @@ const ReadPosts = () => {
         fetchPost().catch(console.error)
     },[])
 
+    // goalkeeper, defense, midfield, and attack
+    const numberOfAttackers = posts.filter(item => item.position === "Attacker");
+    const numberOfGoalkeepers = posts.filter(item => item.position === "Goalkeeper");
+    const numberOfDefense = posts.filter(item => item.position === "Defense");
+    const numberOfMidfield = posts.filter(item => item.position === "Midfield");
+
+    // console.log(player.length);
+
     return (
-        <div className="">
+        <div className="container">
             <SideBar />
             <h1 className="title">Your Teamate Gallery!</h1>
+            <div className="statistics">
+                <h3>So far your team has :</h3>
+                <h5 style={{color: "dark blue"}}>
+                    {numberOfAttackers.length} Attacker(s) &nbsp;&nbsp; {numberOfGoalkeepers.length} Goalkeeper(s) &nbsp;&nbsp; 
+                    {numberOfDefense.length} Defense(s) &nbsp;&nbsp; {numberOfMidfield.length} Midfielder(s)
+                </h5>
+            </div>
             <div className="playersContainer">
                 
                 {
