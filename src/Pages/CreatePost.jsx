@@ -4,7 +4,8 @@ import {supabase} from '../client'
 
 const CreatePost = () => {
 
-    const choices = ['Red', 'Green', 'Blue', 'Purple', 'Yellow', 'Orange', 'Pink', 'Rainbow']
+    const choices = ['Red', 'Green', 'Blue', 'Purple', 'Yellow', 'Orange', 'Pink']
+    const positions = ['Goalkeeper', 'Defense', 'Midfield',  'Attack']
 
     const creatPost = async (event) => {
         event.preventDefault();
@@ -43,10 +44,26 @@ const CreatePost = () => {
                         </div>    
                     </div>
                     <div className='col'>
-                        <div className="mini-container">
+                        <div className="mini-container" >
                             <h3>Position</h3>
-                            <div className="form-text" id="">
-                                <input type="text" className='form-control' placeholder="Enter teamate's position " id='position'/>
+                            <div className="form-check ">
+                                <select className='form-select form-select-lg ' >
+                                <option selected>Select a teamate's position</option>
+                                    {positions &&
+                                        positions.map((item) => (
+                                            <option 
+                                                className='form-check-input me-1'
+                                                id="position"
+                                                value={item}    
+                                                type="radio"
+                                                name='position'
+                                            >
+                                                {item}
+                                            </option>
+                                            
+                                        
+                                        ))}
+                                </select>
                             </div>
                         </div>
                     </div>

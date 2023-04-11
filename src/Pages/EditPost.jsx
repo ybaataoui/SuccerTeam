@@ -5,32 +5,24 @@ import SideBar from "../Components/SideBar";
 
 const EditPost = () => {
 
-    const choices = ['Red', 'Green', 'Blue', 'Purple', 'Yellow', 'Orange', 'Pink', 'Rainbow']
+    const choices = ['Red', 'Green', 'Blue', 'Purple', 'Yellow', 'Orange', 'Pink']
+    const positions = ['Goalkeeper', 'Defense', 'Midfield',  'Attacker']
+
     const {id, name, position, number, color} = useParams();
 
-   // console.log(id, name, position, number, color)
-//     const [player, setPlayer] = useState({newName: "", playerID: id})
-//    const handleChange = (event) => {
-//     const {name, value} = event.target;
-//     setPlayer((prev) => {
-//         return {
-//             ...prev,
-//             [name]:value,
-//         }
-//     })}
+    const [newName, setNewName] = useState(name);
+    const [newAge, setNewAge] = useState(number);
+    const [selectedColor, setSelectedColor] = useState(color);
+    const [newPosition, setPosition] = useState(position);
 
    //update player
    const updatePlayer = async (event) => {
         event.preventDefault();
 
-        const newName = document.getElementById('name').value;
-        const newPosition = document.getElementById('position').value;
-        const newNumber = document.getElementById('number').value;
-        const newColor = document.querySelector('input[name="color"]:checked').value;
-
+       //const newColor = document.querySelector('input[name="color"]:checked').value; Get a radio button value
         await supabase
         .from('Posts')
-        .update({name: newName, position: newPosition, number: newNumber, color: newColor})
+        .update({name: newName, position: newPosition, number: newAge, color: selectedColor})
         .eq('id', id);
 
         window.location = "/";
@@ -59,7 +51,8 @@ const EditPost = () => {
                         <div className="mini-container">
                             <h3>Name</h3>
                             <div className="form-text" id="">
-                                <input type="text" className='form-control' placeholder="Enter teamate's name " id="name" defaultValue={name}
+                                <input type="text" className='form-control' placeholder="Enter teamate's name " 
+                                    id="name" value={newName} onChange={(e) => setNewName(e.target.value)}
                                  />
                             </div>
                         </div>    
@@ -67,8 +60,22 @@ const EditPost = () => {
                     <div className='col'>
                         <div className="mini-container">
                             <h3>Position</h3>
-                            <div className="form-text" id="">
-                                <input type="text" className='form-control' placeholder="Enter teamate's position " id='position' defaultValue={position}/>
+                            <div className="form-check ">
+                                <select className='form-select form-select-lg mb-2' onChange={(e) => setPosition(e.target.value)} >
+                                <option >Select a teamate's position</option>
+                                    {positions &&
+                                        positions.map((item) => (
+                                            <option 
+                                                className='form-check-input me-1'
+                                                id="position"
+                                                value={item}    
+                                                selected={position}
+                                            >
+                                                {item}
+                                            </option>    
+                                        
+                                        ))}
+                                </select>
                             </div>
                         </div>
                     </div>
@@ -76,7 +83,8 @@ const EditPost = () => {
                         <div className="mini-container">
                             <h3>Age</h3>
                             <div className="form-text" id="">
-                                <input type="text" className='form-control' placeholder="Enter teamate's number " id='number' defaultValue={number}/>
+                                <input type="text" className='form-control' placeholder="Enter teamate's number " 
+                                id='number' value={newAge} onChange={(e) => setNewAge(e.target.value)}/>
                             </div>
                         </div>
                     </div>
@@ -87,8 +95,7 @@ const EditPost = () => {
                                 <ul className='list-group'>
                                     {choices &&
                                         choices.map((choice) => (
-                                        
-                                            <li key={choice} className=''>
+                                        <li key={choice} className=''>
                                                 <input
                                                     className='form-check-input me-1'
                                                     id="color"
@@ -96,10 +103,10 @@ const EditPost = () => {
                                                     type="radio"
                                                     name='color'
                                                     defaultChecked ={choice == color}
+                                                    onChange={(e) => setSelectedColor(e.target.value)}
                                                 />
                                                 <label className="form-check-label">{choice}</label>
                                             </li>
-                                        
                                         ))}
                                 </ul>
                             </div>

@@ -21,7 +21,7 @@ const ReadPosts = () => {
         fetchPost().catch(console.error)
     },[])
 
-    // goalkeeper, defense, midfield, and attack
+
     const numberOfAttackers = posts.filter(item => item.position === "Attacker");
     const numberOfGoalkeepers = posts.filter(item => item.position === "Goalkeeper");
     const numberOfDefense = posts.filter(item => item.position === "Defense");
